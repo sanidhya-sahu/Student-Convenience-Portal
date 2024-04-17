@@ -2,6 +2,7 @@ const express = require('express')
 const session = require('express-session')
 const Complaint = require('../models/complaintSchema')
 const mailer = require('../services/mailer')
+const getPerspective = require(`../services/perspectiveService`)
 const fs = require('fs')
 const sendComplainEmail = mailer.sendComplainEmail
 const sendReminderComplainEmail = mailer.sendReminderComplainEmail
@@ -150,6 +151,13 @@ router.get(`/listComplaints`, isLoggedIn, async (req, res) => {
             })
     }
 })
+
+router.get(`/validatePerspective`,async (req,res)=>{
+    const text = req.query.text
+    const perspective = await getPerspective(text)
+    res.send(perspective)
+})
+
 router.get(`/deleteComplaint`, async (req,res)=>{
     const id = req.query.id
     const user = req.session.user

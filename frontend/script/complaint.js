@@ -363,24 +363,45 @@ async function validateAndAlertForm() {
         errorAlert("Fill in details")
     }
     else {
-        confirmWarningAlert('Attention:  Kindly be informed that all complaints will be forwarded to the respective authority for proper handling. Please refrain from using inappropriate language or submitting frivolous complaints, as actions may be taken against the issuer. Thank you for your understanding and cooperation.        Do you want to raise this complaint ?')
-        await waitConfirmation()
-            .then((result) => {
-                if (result) {
+        // document.getElementById('loader').hidden = false
+        fetch(`/validatePerspective?text=${detail}`)
+            .then(response => response.json())
+            .then(async (validated) => {
+                // document.getElementById('loader').hidden = true
+                if (validated.res == true) {
+                    confirmWarningAlert('Attention:  Kindly be informed that all complaints will be forwarded to the respective authority for proper handling. Please refrain from using inappropriate language or submitting frivolous complaints, as actions may be taken against the issuer. Thank you for your understanding and cooperation.        Do you want to raise this complaint ?')
+                    await waitConfirmation()
+                        .then((result) => {
+                            if (result) {
+                                document.getElementById('name').value = name
+                                document.getElementById('email').value = email
+                                document.getElementById('complaint_location_select').value = location
+                                document.getElementById('block_select').value = block
+                                document.getElementById('complaint_type_select').value = type
+                                document.getElementById('complaint_details').value = detail
+                                document.getElementById('form').submit()
+                            }
+                            else {
+                                window.location.reload()
+                            }
+                        })
+                        .catch((err) => {
+                            errorAlert('Some error occured, try again.')
+                        })
+                }
+                else if (validated.res == false) {
+                    window.location = '/errorframe'
+                }
+                else {
+                    const result = validated.res
+                    errorAlert(`We've detected ${result} in your complaint. Please revise it accordingly`)
                     document.getElementById('name').value = name
                     document.getElementById('email').value = email
                     document.getElementById('complaint_location_select').value = location
                     document.getElementById('block_select').value = block
                     document.getElementById('complaint_type_select').value = type
                     document.getElementById('complaint_details').value = detail
-                    document.getElementById('form').submit()
                 }
-                else {
-                    window.location.reload()
-                }
-            })
-            .catch((err) => {
-                errorAlert('Some error occured, try again.')
             })
     }
 }
