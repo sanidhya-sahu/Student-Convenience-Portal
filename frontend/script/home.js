@@ -13,21 +13,19 @@ fetch('/userInfo')
 const home = document.getElementById('side-home')
 const faculty = document.getElementById('side-faculty')
 const event_butt = document.getElementById('side-event')
-const notice = document.getElementById('side-notice')
 const complaint_button = document.getElementById('side-complaint')
-const suggetion = document.getElementById('side-suggetions')
 const rule = document.getElementById('side-rule')
 const heading = document.getElementById('heading')
+const profilediv = document.getElementById('profile')
 home.id="active"
 const workspace = document.getElementById('workspace')
 function facultyInfo() {
     home.id=""
     event_butt.id=""
-    notice.id=""
     complaint_button.id=""
-    suggetion.id=""
     rule.id=""
     faculty.id="active"
+    profilediv.id=""
     heading.innerText="Faculty Information"
     workspace.classList.remove('home')
     workspace.classList.add('frame')
@@ -35,12 +33,26 @@ function facultyInfo() {
     <iframe src="../html/facultyInfo.html" style="border: none;width: 100%;height: 100%;"></iframe>
     `
 }
+function profile() {
+    home.id=""
+    event_butt.id=""
+    complaint_button.id=""
+    rule.id=""
+    faculty.id=""
+    profilediv.id="active"
+    profilediv.style.width = "94%"
+    heading.innerText="Profile"
+    workspace.classList.remove('home')
+    workspace.classList.add('frame')
+    workspace.innerHTML = `
+    <iframe src="../html/profile.html" style="border: none;width: 100%;height: 100%;"></iframe>
+    `
+}
 function events() {
     home.id=""
+    profilediv.id=""
     event_butt.id="active"
-    notice.id=""
     complaint_button.id=""
-    suggetion.id=""
     rule.id=""
     faculty.id=""
     heading.innerText="Upcoming Events"
@@ -53,12 +65,11 @@ function events() {
 function rulebook() {
     home.id=""
     event_butt.id=""
-    notice.id=""
     complaint_button.id=""
-    suggetion.id=""
     rule.id="active"
     faculty.id=""
-    heading.innerText="Rule Book"
+    profilediv.id=""
+    heading.innerText="Rule Book for Hosteller"
     workspace.classList.remove('home')
     workspace.classList.add('frame')
     workspace.innerHTML = `
@@ -68,11 +79,10 @@ function rulebook() {
 function complaint() {
     home.id=""
     event_butt.id=""
-    notice.id=""
     complaint_button.id="active"
-    suggetion.id=""
     rule.id=""
     faculty.id=""
+    profilediv.id=""
     heading.innerText="Complaints"
     workspace.classList.remove('home')
     workspace.classList.add('frame')

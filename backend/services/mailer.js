@@ -18,12 +18,14 @@ const sendComplainEmail = async (complainId, staffEmail, studentName,email, comp
         text: `Respected Authority,\n\n${studentName} [ ${email} ], has an complain reagrding ${location} - ${block}.\n\nComplain : ${complainDesc}.\n\nComplain ID : ${complainId}.\n\nComplain Status : ${status} 
             `
     };
-
+    // console.log("senidng mail");
     transporter.sendMail(message)
         .then(() => {
+            // console.log(`mail sent by ${studentName}`);
             return true
         })
         .catch(error => {
+            // console.log(error);
             return false
         });
 }
@@ -38,9 +40,11 @@ const sendReminderComplainEmail = async (complainId, staffEmail, studentName,ema
 
     transporter.sendMail(message)
         .then(() => {
+            // console.log(`mail sent by ${studentName}`);
             return true
         })
         .catch(error => {
+            // console.log(error);
             return false
         });
 }

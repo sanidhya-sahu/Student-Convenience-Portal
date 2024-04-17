@@ -15,6 +15,8 @@ window.addEventListener('load', () => {
             }
         })
         .then((facultyData) => {
+            document.getElementById('loader').hidden = true
+            document.getElementById('inp').style.opacity = "1"
             const facultySelect = document.getElementById('facultySelect')
             const data = facultyData.data
             for (const key in data) {
@@ -80,7 +82,7 @@ input_button.addEventListener('click', () => {
             }
 
         }
-        else{
+        else {
             alert('Faculty not found');
         }
     }

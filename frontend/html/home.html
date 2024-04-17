@@ -21,17 +21,15 @@
             <div class="butt">
                 <button class="sidebutton" onclick="window.location='/dashboard'" id="side-home">Home</button>
                 <button class="sidebutton" onclick="events()" id="side-event">Events</button>
-                <button class="sidebutton" onclick="window.location='/notice'" id="side-notice">Notice</button>
                 <button class="sidebutton" onclick="facultyInfo()" id="side-faculty">Faculty Info</button>
                 <button class="sidebutton" onclick="complaint()" id="side-complaint">Complaint</button>
-                <button class="sidebutton" onclick="window.location='/suggetion'" id="side-suggetions" >Suggetions</button>
                 <button class="sidebutton" onclick="rulebook()" id="side-rule">Rule Book</button>
             </div>
-            <div class="profile">
+            <div class="profile" id="profile">
                 <div class="img" id="profile_img"></div>
                 <div class="data">
                     <div class="name" id="profile_name"></div>
-                    <div class="profilelink"><a href="/profile">&nbsp;View Profile</a></div>
+                    <div id="profile-link" class="profilelink" onclick="profile()">&nbsp;View Profile</div>
                 </div>
             </div>
         </div>
@@ -50,12 +48,10 @@
         </div>
         <div id="workspace" class="workspace home">
             <button class="homebutton" onclick="complaint()" id="complaint">Complaint</button>
-            <button class="homebutton" onclick="window.location='/suggetion'" id="suggetion">Suggetions</button>
             <button class="homebutton" onclick="events()" id="event">Events</button>
-            <button class="homebutton" onclick="window.location='/notice'" id="notice">Notice</button>
             <button class="homebutton" onclick="rulebook()" id="rule">Rule Book</button>
             <button class="homebutton" onclick="facultyInfo()" id="facultyinfo">Faculty Info</button>
-            <button class="homebutton" onclick="window.location='/profile'" id="profile">Profile</button>
+            <button class="homebutton" onclick="profile()" id="profile">Profile</button>
         </div>
     </div>
 

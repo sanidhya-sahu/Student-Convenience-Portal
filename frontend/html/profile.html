@@ -4,19 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SCP | New User</title>
+    <title>SCP | Profile</title>
     <link rel="stylesheet" href="../style/dashboard.css">
     <link rel="stylesheet" href="../style/newUser.css">
-    <script src="../script/newUser.js" defer></script>
+    <script src="../script/profile.js" defer></script>
 </head>
 
 <body>
     <div class="heading">
         <div>
-            <h1>New Registration</h1>
-        </div>
-        <div>
-            <p><span id="headName"></span>&nbsp;Please verify your details and register.</p>
+            <p><span id="headName"></span></p>
         </div>
     </div>
     <div class="detail">
@@ -25,18 +22,17 @@
         <div class="email"><span class="label">Email :</span><span class="value" id="email"></span></div>
         <div class="hosteler"><span class="label">Hostler :</span><span class="value" id="hosteler"></span></div>
         <div class="access"><span class="label">Access :</span><span class="value" id="access"></span></div>
-        <div class="gender_form">
-            <p>Select Gender :</p>
-            <form id="gender_form" action="/newUser" method="post">
-                <div class="inputs">
-                    <input type="radio" id="male" name="gender" value="male">
-                    <label for="male">Male</label><br>
-                    <input type="radio" id="female" name="gender" value="female">
-                    <label for="female">Female</label><br>
-                </div>
-            </form>
+        <div class="gender" style="
+        height: 7.5%;
+        width: 100%;
+        padding-left: 40px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 1%;">
+            <span class="label">Gender :</span><span class="value" id="gender"></span>
         </div>
-        <div class="btn-div" id="btn"></div>
     </div>
 </body>
 
