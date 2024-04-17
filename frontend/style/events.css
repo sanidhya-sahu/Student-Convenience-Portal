@@ -1,0 +1,136 @@
+body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.blur {
+  filter: contrast(0.6);
+  order: 1;
+}
+
+.blur::after {
+  content: 'Past Event';
+  position: absolute;
+  bottom: 0%;
+  left: 30%;
+  font-size: 20px;
+  font-family: 'Jura';
+  -webkit-text-stroke: thin;
+  color: red;
+  filter: contrast(2);
+}
+
+.events_main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5%;
+}
+
+.card {
+  --font-color: #323232;
+  --font-color-sub: #666;
+  --bg-color: #fff;
+  --main-color: #323232;
+  --main-focus: #2d8cf0;
+  width: 230px;
+  height: 300px;
+  background: var(--bg-color);
+  border: 2px solid var(--main-color);
+  box-shadow: 4px 4px var(--main-color);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 20px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  gap: 8px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  transition: all 0.3s; 
+}
+
+.card-img {
+  width: 100%;
+  height: 80%;
+  transition: all 0.5s;
+  display: flex;
+  justify-content: center;
+}
+
+.card-img>img {
+  height: 150px;
+  max-width: -webkit-fill-available;
+}
+
+.card-title {
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+  color: var(--font-color);
+}
+
+.card-subtitle {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--font-color-sub);
+  overflow-wrap: break-word;
+}
+
+
+.card-divider {
+  width: 100%;
+  border: 1px solid var(--main-color);
+  border-radius: 50px;
+}
+
+.card-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-price {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--font-color);
+}
+
+.card-price div span {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--font-color-sub);
+}
+
+.card-btn {
+  height: 40px;
+  background: var(--bg-color);
+  border: 2px solid var(--main-color);
+  border-radius: 5px;
+  padding: 0 15px;
+  transition: all 0.3s;
+  font-weight: 600;
+}
+
+.card-img:hover {
+  transform: translateY(-3px);
+}
+.card:hover{
+  box-shadow: 6px 6px var(--main-color);
+  transform: translateY(-8px);
+  transform: translateX(-5px);
+}
+
+.card-btn:hover {
+  border: 2px solid var(--main-color);
+  box-shadow: 4px 4px var(--main-color);
+}

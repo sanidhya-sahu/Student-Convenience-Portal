@@ -1,0 +1,71 @@
+.home {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 40%);
+    justify-items: center;
+    align-items: center;
+}
+
+
+button.homebutton {
+    width: 15vw;
+    height: 22vh;
+    padding: 5%;
+    font-size: large;
+    border: 1px solid #D9D9D9;
+    border-radius: 5%;
+    border: none;
+    background-color: #fcfdfe;
+    box-shadow: inset -5px -5px 9px rgb(220 220 220 / 6%), inset 5px 5px 9px rgb(74 74 74 / 5%);
+    background-image: none;
+    background-size: 5vw;
+    background-repeat: no-repeat;
+    background-origin: border-box;
+    background-position-x: right;
+    background-position-y: bottom;
+}
+
+button.homebutton#complaint:hover {
+    background-image: url(../assets/complaint.gif);
+}
+
+button.homebutton#suggetion:hover {
+    background-image: url(../assets/suggetion.gif);
+}
+
+button.homebutton#event:hover {
+    background-image: url(../assets/event.gif);
+}
+
+button.homebutton#notice:hover {
+    background-image: url(../assets/notice.gif);
+}
+
+button.homebutton#rule:hover {
+    background-image: url(../assets/rule.gif);
+}
+
+button.homebutton#facultyinfo:hover {
+    background-image: url(../assets/info.gif);
+}
+
+button.homebutton#profile:hover {
+    background-image: url(../assets/profile.gif);
+}
+
+button.homebutton:hover {
+    background-size: 5vw;
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: bottom;
+    background-origin: content-box;
+    text-align: justify;
+    transition: all 1s ease-in-out;
+}
+
+.frame{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}

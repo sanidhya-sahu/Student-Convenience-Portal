@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WebSocket Chat</title>
+  <style>
+    /* Add basic styling for the chat window */
+    #chat-window {
+      border: 1px solid #ccc;
+      height: 300px;
+      overflow-y: scroll;
+      padding: 10px;
+    }
+    #message-input {
+      width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+  <h1>WebSocket Chat</h1>
+  <div id="chat-window"></div>
+  <input type="text" id="message-input" placeholder="Enter message">
+  <button id="send-button">Send</button>
+
+  <script>
+    const socket = new WebSocket("ws://localhost/ws"); // Replace with your server's WebSocket URL
+
+    const chatWindow = document.getElementById("chat-window");
+    const messageInput = document.getElementById("message-input");
+    const sendButton = document.getElementById("send-button");
+
+    socket.onopen = function(event) {
+      console.log("Connected to WebSocket server!");
+      chatWindow.textContent += "Connected!\n"; // Display connected message in the chat window
+    };
+
+    socket.onmessage = function(event) {
+      console.log("Received message from server:", event.data);
+      chatWindow.textContent += event.data + "\n"; // Append received message to the chat window
+    };
+
+    socket.onerror = function(error) {
+      console.error("WebSocket error:", error);
+      chatWindow.textContent += "Error: " + error.message + "\n"; // Display error message in the chat window
+    };
+
+    socket.onclose = function(event) {
+      console.log("Disconnected from WebSocket server!");
+      chatWindow.textContent += "Disconnected!\n"; // Display disconnected message in the chat window
+    };
+
+    sendMessage = function(message) {
+      if (socket.readyState === WebSocket.OPEN) {
+        socket.send(message);
+      } else {
+        console.error("WebSocket connection is not open!");
+        chatWindow.textContent += "Error: Connection not open.\n"; // Display error message in the chat window
+      }
+    };
+
+    sendButton.addEventListener("click", function() {
+      const message = messageInput.value;
+      sendMessage(message);
+      messageInput.value = ""; // Clear the message input field after sending
+    });
+  </script>
+</body>
+</html>

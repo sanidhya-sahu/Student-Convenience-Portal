@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error</title>
+    <link rel="stylesheet" href="../style/login.css">
+</head>
+<body>
+    <div class="main">
+        <div class="container box">
+            <div class="login">
+                <nav>
+                    <div class="head">
+                        <h1>Some Error Occurred. redirecting in <span id="countdown" style="color: rgb(209, 57, 57);"></span> sec</h1>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    <div class="wampus box" id="wampus">
+        <img src="../assets/error.gif" alt="">
+    </div>
+</body>
+<script>
+    function countdown() {
+      let seconds = 5;
+      const intervalId = setInterval(() => {
+        document.getElementById('countdown').innerText = seconds;
+        seconds--;
+        if (seconds < 0) {
+          window.location.href = "/"
+        }
+      }, 1000);
+    }
+    window.onload = countdown;
+</script>
+</html>

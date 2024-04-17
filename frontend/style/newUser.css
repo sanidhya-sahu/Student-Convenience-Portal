@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Jura';
+}
+
+body {
+    transition: all 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    gap: 5vh;
+}
+
+.heading{
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 1vh;
+}
+.heading > div > p{
+    display: flex;
+}
+#headName{
+    font-weight: bold;
+}
+
+.detail {
+    width: 30vw;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2%;
+    flex-direction: column;
+    border: 1px solid #D9D9D9;
+    border-radius: 5%;
+    border: none;
+    background-color: #fcfdfe;
+    box-shadow: inset -5px -5px 9px rgb(220 220 220 / 6%), inset 5px 5px 9px rgb(74 74 74 / 5%);
+}
+
+.img {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img>img {
+    height: 80%;
+    width: auto;
+    filter: grayscale();
+}
+
+.name,
+.email,
+.hosteler,
+.access {
+    height: 7.5%;
+    width: 100%;
+    padding-left: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1%;
+}
+
+.gender_form {
+    height: 10%;
+    padding-left: 40px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 5%;
+}
+
+.label {
+    width: 20%;
+}
+
+.value {
+    width: 80%;
+}
+
+.gender_form>form {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    gap: 20%;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: row;
+    gap: 5%;
+}
+
+.btn-div {
+    height: 20%;
+}
+
+.btn {
+    outline: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #40B3A2;
+    min-width: 200px;
+    border: 0;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .1);
+    box-sizing: border-box;
+    padding: 16px 20px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+.btn:hover {
+    opacity: .95;
+}
+.btn:hover .animation{
+    animation: ripple 0.4s linear infinite;
+}
+
+@keyframes ripple {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1);
+    }
+
+    100% {
+        box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1), 0 0 0 80px rgba(255, 255, 255, 0);
+    }
+}

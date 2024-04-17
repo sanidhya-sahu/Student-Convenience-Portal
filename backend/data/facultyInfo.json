@@ -1,0 +1,19 @@
+{
+    "data":{
+        "10030":{
+            "name":"Dr. Jitendra Parmar",
+            "email":"example@gmail.com",
+            "cabin":"A502"
+        },
+        "10031":{
+            "name":"Dr. Jitendra Parmar 2",
+            "email":"example@gmail.com",
+            "cabin":"A503"
+        },
+        "10032":{
+            "name":"Dr. exp3",
+            "email":"example@gmail.com",
+            "cabin":"A504"
+        }
+    }
+}

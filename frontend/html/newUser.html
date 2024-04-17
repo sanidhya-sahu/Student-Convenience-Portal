@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCP | New User</title>
+    <link rel="stylesheet" href="../style/dashboard.css">
+    <link rel="stylesheet" href="../style/newUser.css">
+    <script src="../script/newUser.js" defer></script>
+</head>
+
+<body>
+    <div class="heading">
+        <div>
+            <h1>New Regestration</h1>
+        </div>
+        <div>
+            <p><span id="headName"></span>&nbsp;Please verify your details and register.</p>
+        </div>
+    </div>
+    <div class="detail">
+        <div class="img" id="img"></div>
+        <div class="name"><span class="label">Name :</span><span class="value" id="name"></span></div>
+        <div class="email"><span class="label">Email :</span><span class="value" id="email"></span></div>
+        <div class="hosteler"><span class="label">Hostler :</span><span class="value" id="hosteler"></span></div>
+        <div class="access"><span class="label">Access :</span><span class="value" id="access"></span></div>
+        <div class="gender_form">
+            <p>Select Gender :</p>
+            <form id="gender_form" action="/newUser" method="post">
+                <div class="inputs">
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Male</label><br>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label><br>
+                </div>
+            </form>
+        </div>
+        <div class="btn-div" id="btn"></div>
+    </div>
+</body>
+
+</html>
